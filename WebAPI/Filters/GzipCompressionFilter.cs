@@ -29,9 +29,8 @@ namespace WebAPI.Filters
         {
             using (MemoryStream output = new MemoryStream())
             {
-                using (Ionic.Zlib.GZipStream compressor = new Ionic.Zlib.GZipStream(output,
-                                                                                    Ionic.Zlib.CompressionMode.Compress,
-                                                                                    Ionic.Zlib.CompressionLevel.BestSpeed))
+                using (Ionic.Zlib.GZipStream compressor = new Ionic.Zlib.GZipStream(
+                    output, Ionic.Zlib.CompressionMode.Compress, Ionic.Zlib.CompressionLevel.BestSpeed))
                 {
                     compressor.Write(contentBytes, 0, contentBytes.Length); 
                 }
